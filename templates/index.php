@@ -44,7 +44,12 @@
                             <span class="lot__cost"><?= cost_format(htmlspecialchars($value['cost'])); ?> ₽</span>
                         </div>
                         <div class="lot__timer timer">
-
+                            <?php
+                                date_default_timezone_set("Europe/Moscow");
+                                $hrs = floor((strtotime("tomorrow")-time())/3600);
+                                $mins = floor((strtotime("tomorrow")-time())/60)-$hrs*60;
+                                print $hrs.":".$mins;
+                            ?>
                         </div>
                     </div>
                 </div>
